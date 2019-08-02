@@ -73,7 +73,7 @@ const scoreCalc = () => {
     }
     else{
         if (player2score == 1 || diceNumber == 1) {
-            message1.innerHTML = "Sorry you rolled 1 \n you're a loser"
+            message1.innerHTML = "Sorry you rolled 1 \n next player"
             playerscore2.innerHTML = player2score;
             player2score = 0
             switchPlayer();
