@@ -1,0 +1,38 @@
+body {
+    background-color: orange;
+    display: flex;
+    align-content: center;
+    color: black;
+}
+
+.game-area {
+    display: flex;
+    align-content: center;
+    border: solid black;
+    height: 70vh;
+    width: 70vh;
+    position: relative;
+    top: 150px;
+    left: 35%;
+    padding-top: 50px;
+    justify-content: center;
+}
+
+
+#image1 {
+    display: flex;
+    position: fixed;
+    padding-left: 40px;
+    justify-content: center;
+}
+
+h2#message1{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+#startButton {
+
+}
