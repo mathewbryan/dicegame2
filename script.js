@@ -60,7 +60,8 @@ const scoreCalc = () => {
         }
         else if (score + globalScore1 >=20) {
             userscore.innerHTML = score;
-            alert("You Win")
+            message1.innerHTML = "Winner!!!!!!!"
+            end()
         }
         else if (score >= 20) {
             userscore.innerHTML = score;
@@ -87,8 +88,9 @@ const scoreCalc = () => {
 
         }
         else if (player2score + globalScore2 >=20) {
-            
-            alert("You Win")
+            userscore.innerHTML = score;
+            message1.innerHTML = "Winner!!!!!!!"
+            end()
         }
         else {
             playerscore2.innerHTML = player2score;
