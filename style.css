@@ -6,17 +6,16 @@ body {
 
 .game-area {
     display: flex;
-    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
 }
 
 
 #image1 {
+    align-self: center;
   position: absolute;
   top: 50px;
   left: 80px;
-
 }
 
 h2#message1{
@@ -38,8 +37,7 @@ h2#message1{
 }
 
 
+
 #startButton {
 
-
 }
-

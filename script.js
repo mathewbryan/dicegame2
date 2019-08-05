@@ -6,15 +6,14 @@ let currentscore2 = document.getElementById('playerscore2')
 let usermessage = document.getElementById('message1')
 let diceImage = document.getElementById('diceimage')
 
+
 let diceNumber;
 let currentplayer = 'player1'
-let score = 0;
+let score = 0;  
 let player2score = 0;
+let globalScore1 = 0;
+let globalScore2 = 0;
 
-
-// let roll = document.addEventListener("click", () =>{
-//     console.log("you rolled the dice")
-// })
 
 //looks for button press 
 btnPress.addEventListener("click", () => {
@@ -22,6 +21,7 @@ btnPress.addEventListener("click", () => {
     rollDice()
 })
 
+// Looks for user pressing the hold button which swithces the user and saves the score 
 switchPress.addEventListener("click", () => {
     switchPlayer()
 })
@@ -30,10 +30,8 @@ switchPress.addEventListener("click", () => {
 const rollDice = () => {
     diceNumber = Math.floor(Math.random() * 6) + 1
     console.log(diceNumber)
-    // score += diceNumber
     dicenum.innerHTML = diceNumber;
     diceImage.src = `img/dice${diceNumber}.png`
-    // scoreCalc()
     userScoreCalc()
 }
 
@@ -51,7 +49,7 @@ const userScoreCalc = () => {
     }
 }
 
-// if player rolls 1 then game over, if reaches 20 they win
+// if player rolls 1 then tyhey lose their score, if reaches 20 they win
 const scoreCalc = () => {
     if (currentplayer == 'player1') {
         if (score == 1 || diceNumber == 1) { 
@@ -59,6 +57,10 @@ const scoreCalc = () => {
             score = 0
             userscore.innerHTML = score;
             switchPlayer();
+        }
+        else if (score + globalScore1 >=20) {
+            userscore.innerHTML = score;
+            alert("You Win")
         }
         else if (score >= 20) {
             userscore.innerHTML = score;
@@ -84,6 +86,10 @@ const scoreCalc = () => {
             end()
 
         }
+        else if (player2score + globalScore2 >=20) {
+            
+            alert("You Win")
+        }
         else {
             playerscore2.innerHTML = player2score;
             message1.innerHTML = "Roll again";
@@ -92,14 +98,22 @@ const scoreCalc = () => {
     }
 }
 
-//switch players
+//switch players + moves current score to total score area
 const switchPlayer = () => {
     if (currentplayer == 'player1') {
         currentplayer = 'player2'
+        globalScore1 += score
+        document.getElementById("globalScore1").textContent = globalScore1
+        score = 0
+        userscore.innerHTML = score;
         console.log(player2score)
     }
     else {
         currentplayer = 'player1'
+        globalScore2 += player2score
+        document.getElementById("globalScore2").textContent = globalScore2
+        player2score = 0
+        playerscore2.innerHTML = player2score;
         console.log(score)
     }
 
