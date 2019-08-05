@@ -6,16 +6,18 @@ body {
 
 .game-area {
     display: flex;
+    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    position: relative;
+    padding-top: 10%;
 }
 
 
-#image1 {
-    align-self: center;
-  position: absolute;
-  top: 50px;
-  left: 80px;
+#diceimage {
+    position: absolute; 
+    left: 44%;
+    bottom: 57%;
 }
 
 h2#message1{
@@ -25,19 +27,63 @@ h2#message1{
 
 .player1{
     background-color: white;
-    border: solid black;
-    flex: 1;
+    border: solid grey;
+    text-align: center;
+    padding-top: 100px;
+    width: 500px;
+    height: 400px;
+
 }
 
 .player2 {
-    background-color: white;
-    border: solid black;
-    text-align: right; 
-    flex:1;
+    background-color: orange;
+    border: solid grey;
+    text-align: center; 
+    padding-top: 100px;
+    height: 400px;
+    width:500px; 
 }
 
 
 
-#startButton {
+#startbutton {
+    position: absolute;
+    background-color: black;
+    color: white;
+    bottom: 50%;
+    left: 48%;
+    width: 70px;
+}
 
+#switchbutton {
+    position: absolute;
+    background-color: black;
+    color: white;
+    bottom: 46%;
+    left: 48%;
+    width: 70px;
+}
+
+#dicenumber {
+    position: absolute; 
+    left: 46%;
+    bottom: 35%;
+    z-index: 2;
+    
+}
+
+#dicenum {
+    position: absolute; 
+    left: 49%;
+    bottom: 26%;
+    z-index: 2;
+    font-size: 50px;
+}
+
+#globalScore2 {
+    font-size: 50px;
+}
+
+#globalScore1 {
+    font-size: 50px;
 }
